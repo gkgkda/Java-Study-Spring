@@ -1,5 +1,14 @@
 HELP.md
+.gitignore
+
+### Gragle ###
+gradle/
 .gradle
+build.gradle
+gradlew
+gradlew.bat
+settings.gradle
+
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
