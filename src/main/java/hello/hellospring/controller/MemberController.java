@@ -37,6 +37,13 @@ public class MemberController {
     @Autowired
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
+        System.out.println("memberService = " + memberService.getClass());
+        /*
+        memberService = class hello.hellospring.service.MemberService$$SpringCGLIB$$0
+         * AOP 사용 시 Spring 컨테이너는 CGLIB 라는 라이브러리를 통해 가짜 memberService를 생성 (프록시 기술)
+         * helloController를 Run 하면 가짜 memberService 를 우선 호출하고 AOP를 실행
+         * 이어서 joinPoint.proceed() 가 수행되고 이때 실제 memberService가 호출되는 방식
+         */
     }
 
     @GetMapping("members/new")
